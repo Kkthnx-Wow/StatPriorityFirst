@@ -551,7 +551,7 @@ ns.Data = {
 					notes = {  },
 				},
 				CRIT = {
-					summary = "Grants Dodge (subject to heavy diminishing returns), and causes your damage and healing to have a chance to critically strike, dealing double damage/healing. Guardian Druid has no notable interactions with Critical Strike. Most of Guardian\\u2019s abilities can critically hit, with the exception of Frenzied Regeneration and the extra healing produced from our Mastery (Mastery: Nature's Guardian)",
+					summary = "Grants Dodge (subject to heavy diminishing returns), and causes your damage and healing to have a chance to critically strike, dealing double damage/healing. Guardian Druid has no notable interactions with Critical Strike. Most of Guardian’s abilities can critically hit, with the exception of Frenzied Regeneration and the extra healing produced from our Mastery (Mastery: Nature's Guardian)",
 					notes = {  },
 				},
 				MASTERY = {
@@ -1116,7 +1116,7 @@ ns.Data = {
 					notes = {  },
 				},
 				HASTE = {
-					summary = "Increases cast speed, reduces your Global Cooldown, and reduces the cooldown of some rotational abilities. Haste is good for Fire Mages for a couple reasons: Haste\\u2019s impact on the GCD allows for more casts inside of the Combustion window",
+					summary = "Increases cast speed, reduces your Global Cooldown, and reduces the cooldown of some rotational abilities. Haste is good for Fire Mages for a couple reasons: Haste’s impact on the GCD allows for more casts inside of the Combustion window",
 					notes = {  },
 				},
 				MASTERY = {
@@ -1238,23 +1238,23 @@ ns.Data = {
 			},
 			stats = {
 				AGI = {
-					summary = "Agility \\u2014 1 rating = 1 Attack/Spell Power: Your main stat, found on leather gear and many trinkets. Agility is a direct survival and damage stat, passively increasing the strength of almost every ability and effect in your toolkit. It will almost universally be your best stat. Examples of Agility's Impact",
+					summary = "Agility — 1 rating = 1 Attack/Spell Power: Your main stat, found on leather gear and many trinkets. Agility is a direct survival and damage stat, passively increasing the strength of almost every ability and effect in your toolkit. It will almost universally be your best stat. Examples of Agility's Impact",
 					notes = {  },
 				},
 				HASTE = {
-					summary = "\\u2014 44 rating = 1%: Increases attack speed, Energy regeneration, and reduces the cooldown of some rotational abilities. As an Energy-based specialization, Haste does not reduce a Brewmaster's 1-second global cooldown. Haste-affected abilities Keg Smash. Notably, 14.3% Haste results in a 7-second cooldown, and 33.4% a 6-second cooldown",
+					summary = "— 44 rating = 1%: Increases attack speed, Energy regeneration, and reduces the cooldown of some rotational abilities. As an Energy-based specialization, Haste does not reduce a Brewmaster's 1-second global cooldown. Haste-affected abilities Keg Smash. Notably, 14.3% Haste results in a 7-second cooldown, and 33.4% a 6-second cooldown",
 					notes = {  },
 				},
 				CRIT = {
-					summary = "\\u2014 46 rating = 1%: Chance for attacks and heals to be twice as effective, which often includes gear effects like trinkets. Agility-based specializations such as Brewmaster automatically have 10% baseline Critical Strike. Brewmaster Critical Strike Bonuses Directly increases your healing taken through Celestial Fortune, which also similarly increases all friendly damage absorbs based on the stat",
+					summary = "— 46 rating = 1%: Chance for attacks and heals to be twice as effective, which often includes gear effects like trinkets. Agility-based specializations such as Brewmaster automatically have 10% baseline Critical Strike. Brewmaster Critical Strike Bonuses Directly increases your healing taken through Celestial Fortune, which also similarly increases all friendly damage absorbs based on the stat",
 					notes = {  },
 				},
 				VERS = {
 					summary = "= Mastery",
-					notes = { "\\u2014 54 rating = 1%: Increases all damage and healing, while also reducing damage taken. This also applies to gear effects like trinkets. Versatility's Potential Versatility will always require more rating to gain 1% of the stat than any other secondary, but its effects are more universal by comparison" },
+					notes = { "— 54 rating = 1%: Increases all damage and healing, while also reducing damage taken. This also applies to gear effects like trinkets. Versatility's Potential Versatility will always require more rating to gain 1% of the stat than any other secondary, but its effects are more universal by comparison" },
 				},
 				MASTERY = {
-					summary = "\\u2014 46 rating = 1 Mastery Point (What's this?): Mastery: Elusive Brawler gives you a stacking dodge chance buff when an enemy successfully hits you with a direct attack or you cast Blackout Kick. This chance resets whenever you dodge an attack. Your Attack Power is also increased at all times.Further Mastery Mechanics Brewmaster Monks start with 7.4% Dodge chance per stack and an Attack Power increase of 8%",
+					summary = "— 46 rating = 1 Mastery Point (What's this?): Mastery: Elusive Brawler gives you a stacking dodge chance buff when an enemy successfully hits you with a direct attack or you cast Blackout Kick. This chance resets whenever you dodge an attack. Your Attack Power is also increased at all times.Further Mastery Mechanics Brewmaster Monks start with 7.4% Dodge chance per stack and an Attack Power increase of 8%",
 					notes = {  },
 				},
 			},
