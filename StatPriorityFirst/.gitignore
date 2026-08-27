@@ -1,0 +1,11 @@
+# Scrape pipeline working files (regenerated locally, never committed).
+tools/cache/
+tools/fixtures/
+tools/__pycache__/
+tools/*.log
+tools/*_report.json
+tools/priorities_cache.json
+tools/spf-wowhead-export.json
+
+# Dev scratch inspectors.
+tools/_inspect_*.py

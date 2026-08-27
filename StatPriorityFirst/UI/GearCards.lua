@@ -432,6 +432,9 @@ local function PaintSection(row, data, gear, width, height, showRule)
 		for i = 1, #row.altIcons do
 			row.altIcons[i]:Hide()
 		end
+		row.emptyHint:SetText(L["GEAR_NO_DATA"] or L["GEAR_EMPTY"] or "-")
+		row.emptyHint:SetWidth(max(1, width - ROW_PAD * 2))
+		row.emptyHint:SetJustifyH("CENTER")
 		row.emptyHint:ClearAllPoints()
 		row.emptyHint:SetPoint("CENTER", 0, -4)
 		row.emptyHint:Show()
@@ -477,7 +480,8 @@ local function PaintSection(row, data, gear, width, height, showRule)
 		row.altLabel:SetWidth(altW)
 		row.altLabel:Show()
 	else
-		-- Consumables-style: icons only, no Best in Slot footer.
+		-- Single-column (Weapons / Consumables / Tier): icons only, no caption.
+		-- These are unambiguously BiS, so a label just repeats the section title.
 		bisHostW = max(1, width - ROW_PAD * 2)
 		row.bisHost:ClearAllPoints()
 		row.bisHost:SetPoint("TOPLEFT", ROW_PAD, contentTop)

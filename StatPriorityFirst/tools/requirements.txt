@@ -1,0 +1,2 @@
+# StatPriorityFirst weekly scraper — stdlib urllib is enough; requests optional.
+# No third-party deps required for v1.
