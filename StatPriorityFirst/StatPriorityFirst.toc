@@ -1,0 +1,30 @@
+## Interface: 120100
+## Title: Stat Priority First
+## Notes: PvE stat priorities (Raid / Mythic+) from Wowhead — clean, hoverable, weekly-updated. |n|n|cff5C8BCFDeveloper|cffffffff:|r |nJosh "|CFF7b8489Kkthnx|r" Russell|n|n|cff009cdePayPal|r|cffffffff:|r |n|cffffffffwww.paypal.me/KkthnxTV|r|n|n|cfff96854Patreon|r|cffffffff:|r |n|cffffffffwww.patreon.com/Kkthnx|r
+## Author: Josh "|CFF7b8489Kkthnx|r" Russell
+## Version: 2.0.0
+## License: All Rights Reserved
+## SavedVariables: StatPriorityFirstDB
+## IconTexture: Interface\AddOns\StatPriorityFirst\assets\critical-strike
+## OptionalDeps: Blizzard_Settings_Shared, ElvUI, EllesmereUI, EllesmereUIBlizzardSkin
+## X-Curse-Project-ID: 1605992
+
+Locales\enUS.lua
+Locales\deDE.lua
+Core\Namespace.lua
+Data\Catalog.lua
+Data\Priorities.lua
+Core\Player.lua
+Core\DR.lua
+UI\Skin.lua
+UI\CopyURL.lua
+UI\StatTooltip.lua
+UI\ItemTooltip.lua
+UI\Guide.lua
+UI\GearCards.lua
+UI\Panel.lua
+UI\CharacterBar.lua
+UI\Minimap.lua
+UI\SettingsHelp.xml
+UI\Settings.lua
+Core\Init.lua
