@@ -1,7 +1,7 @@
 --[[
 	StatPriorityFirst - Settings
 	----
-	Blizzard Settings panel only — hide minimap, scale, lock, open-to-Your-Spec,
+	Blizzard Settings panel only. Hide minimap, scale, lock, open-to-Your-Spec,
 	character-frame priority bar, optional item true-rating tooltips,
 	plus a DR explainer at the bottom.
 --]]
@@ -102,7 +102,7 @@ function ns.Settings.Register()
 		return
 	end
 
-	-- Settings is a LOD addon — try once, then allow a later retry if still missing.
+	-- Settings is a LOD addon, so try once, then allow a later retry if still missing.
 	if not Settings and C_AddOns and C_AddOns.LoadAddOn then
 		pcall(C_AddOns.LoadAddOn, "Blizzard_Settings")
 	end

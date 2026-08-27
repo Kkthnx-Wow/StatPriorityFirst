@@ -83,7 +83,7 @@ local function PrintStatus()
 end
 
 local function OnLogin()
-	-- Panel is lazy-created on first /spf or ShowSpec — no need at login.
+	-- Panel is lazy-created on first /spf or ShowSpec, no need at login.
 	if ns.CharacterBar and ns.CharacterBar.Init then
 		ns.CharacterBar.Init()
 	end
@@ -190,7 +190,7 @@ handlers.ADDON_LOADED = function(loaded)
 		OnLoad()
 		return
 	end
-	-- Settings may LOD in after us — finish registration if we bailed at login.
+	-- Settings may LOD in after us, so finish registration if we bailed at login.
 	if loaded == "Blizzard_Settings" and ns.Settings and not ns.Settings.registered then
 		ns.Settings.Register()
 	end
@@ -200,7 +200,7 @@ handlers.PLAYER_LOGIN = function()
 	OnLogin()
 end
 
--- ACTIVE_* is the modern player-spec signal; skip PLAYER_SPECIALIZATION_CHANGED
+-- ACTIVE_* is the modern player-spec signal, so skip PLAYER_SPECIALIZATION_CHANGED
 -- so we don't double-refresh on every talent swap.
 handlers.ACTIVE_PLAYER_SPECIALIZATION_CHANGED = function()
 	if ns.UI and ns.UI.OnSpecChanged then

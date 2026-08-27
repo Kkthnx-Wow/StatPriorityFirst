@@ -2,7 +2,7 @@
 	StatPriorityFirst - Player
 	----
 	Resolve current class/spec → data key. Spec IDs from C_SpecializationInfo
-	(old GetSpecialization globals are deprecated shims — don't rely on them).
+	(old GetSpecialization globals are deprecated shims, don't rely on them).
 --]]
 
 local _, ns = ...
@@ -23,7 +23,7 @@ function ns.GetPlayerSpecID()
 	end
 	local index = C_SpecializationInfo.GetSpecialization()
 	-- Unspecced / talents not loaded: index or docs default specId can be 0.
-	-- In Lua 0 is truthy — don't treat it as a real specialization.
+	-- In Lua 0 is truthy, don't treat it as a real specialization.
 	if not index or index == 0 then
 		return nil
 	end
@@ -52,7 +52,7 @@ function ns.GetPlayerSpecEntry()
 	return class, spec, ns.GetSpecData(classFile, specID)
 end
 
--- Display names for UI — Blizzard locale first, Catalog English as fallback.
+-- Display names for UI. Blizzard locale first, Catalog English as fallback.
 -- Catalog `name` / `slug` stay English for scraper URLs and /spf warrior arms.
 function ns.GetLocalizedClassName(classFile)
 	if not classFile then

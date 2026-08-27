@@ -159,7 +159,7 @@ local function BuildDRLines(specEntry)
 					L["GUIDE_DR_LIVE_ROW"],
 					ns.StatShort(key),
 					ns.DR.FormatRating(live.rating),
-					live.trueRating and ns.DR.FormatTrueRating(live.trueRating) or "—",
+					live.trueRating and ns.DR.FormatTrueRating(live.trueRating) or "-",
 					live.lostRating and ns.DR.FormatTrueRating(live.lostRating) or "0",
 					L[live.statusKey],
 					nextBit
@@ -227,7 +227,7 @@ function ns.UI.SetPanelTab(panel, tabId, state)
 		end
 	end
 
-	-- Class/spec chrome stays; compare only on Priority.
+	-- Class/spec chrome stays. Compare only on Priority.
 	if panel.compareBtn and not isPriority then
 		panel.compareBtn:Hide()
 	end

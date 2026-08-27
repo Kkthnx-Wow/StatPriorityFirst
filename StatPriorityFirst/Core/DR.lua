@@ -7,7 +7,7 @@
 	  Haste         1320 / 1760 / 2200
 	  Vers          1620 / 2160 / 2700
 	True/lost rating uses SimC rating→% conversion + % brackets
-	(sc_scale_data.inc / item_scaling.inc 21024) — same model TrueStatValues uses.
+	(sc_scale_data.inc / item_scaling.inc 21024). Same model TrueStatValues uses.
 	Penalty applies only to rating above each threshold (not the whole pool).
 --]]
 
@@ -68,7 +68,7 @@ ns.DR.BRACKETS = {
 	{ size = 100000, penalty = 1.0 },
 }
 
--- Rating per 1% by player level (SimC sc_scale_data.inc — midnight). Index = level.
+-- Rating per 1% by player level (SimC sc_scale_data.inc, midnight). Index = level.
 -- Level 90: Crit/Mastery 46, Haste 44, Vers 54 → first breakpoint = 30 * factor.
 local CONV = {
 	CRIT = {

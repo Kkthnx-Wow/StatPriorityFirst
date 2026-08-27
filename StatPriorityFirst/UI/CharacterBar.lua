@@ -2,7 +2,7 @@
 	StatPriorityFirst - CharacterBar
 	----
 	Compact current-spec priority chain above CharacterFrame, Character tab only
-	(PaperDollFrame). Hidden on Reputation / Currency — same activeSubframe
+	(PaperDollFrame). Hidden on Reputation / Currency, the same activeSubframe
 	Blizzard uses in CharacterFrame.lua.
 
 	ElvUI / EllesmereUI: soft-skin our bar only when their Character sheet skins
@@ -69,7 +69,7 @@ local function StatColor(key)
 end
 
 -- ---
--- Soft skins — ElvUI (HandleFrame) or EllesmereUI (PP border + fill). Bar only.
+-- Soft skins. ElvUI (HandleFrame) or EllesmereUI (PP border + fill). Bar only.
 -- ---
 
 local function IsExternallySkinned()
@@ -175,7 +175,7 @@ local function SkinChipChrome(chip)
 		return
 	end
 	ApplyExternalFont(chip.label)
-	-- Suite-style icon crop; clear the SPF solid plate so we don't double-box.
+	-- Suite-style icon crop. Clear the SPF solid plate so we don't double-box.
 	if chip.icon then
 		chip.icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
 	end
@@ -211,7 +211,7 @@ local function TrySkinBarWithElvUI()
 	if not E then
 		return false
 	end
-	-- Toolkit APIs land on frames after ElvUI init; CharacterFrame OnShow is late enough.
+	-- Toolkit APIs land on frames after ElvUI init, and CharacterFrame OnShow is late enough.
 	if not bar.StripTextures or not bar.SetTemplate then
 		return false
 	end
@@ -233,7 +233,7 @@ local function TrySkinBarWithElvUI()
 	return true
 end
 
--- Fade Blizzard art without Hide() — same visual-only habit as EUI BlizzardSkin.
+-- Fade Blizzard art without Hide(), the same visual-only habit as EUI BlizzardSkin.
 local function FadeFrameTextures(frame)
 	if not frame or not frame.GetRegions then
 		return
@@ -256,7 +256,7 @@ local function TrySkinBarWithEllesmereUI()
 		return false
 	end
 
-	-- SettingsFrameTemplate NineSlice lives as a child — fade both layers.
+	-- SettingsFrameTemplate NineSlice lives as a child, so fade both layers.
 	FadeFrameTextures(bar)
 	if bar.NineSlice then
 		FadeFrameTextures(bar.NineSlice)
@@ -339,7 +339,7 @@ local function AcquireChip(i)
 		ns.UI.HideStatTooltip()
 	end)
 	chip:SetScript("OnClick", function()
-		-- Always open the panel — unspecced gets NO_SPEC instead of a silent no-op.
+		-- Always open the panel. Unspecced gets NO_SPEC instead of a silent no-op.
 		if ns.UI.ShowSpec then
 			local classFile, specID = ns.GetPlayerClassFile(), ns.GetPlayerSpecID()
 			if classFile and specID then
@@ -478,7 +478,7 @@ function ns.CharacterBar.Refresh()
 	local title = L["PRIORITY"]
 	local specName = ns.GetLocalizedSpecName(specID, catalogSpec and catalogSpec.name)
 	if specName and specName ~= "?" then
-		title = format("%s — %s", specName, L["PRIORITY"])
+		title = format("%s - %s", specName, L["PRIORITY"])
 	end
 	if bar.NineSlice and bar.NineSlice.Text then
 		bar.NineSlice.Text:SetText(title)
@@ -495,7 +495,7 @@ function ns.CharacterBar.Refresh()
 	end
 
 	if not specID then
-		-- Unspecced / talents not loaded — not a data-scrape problem.
+		-- Unspecced or talents not loaded, not a data-scrape problem.
 		HideChain()
 		bar.empty:SetText(L["NO_SPEC_SHORT"] or L["NO_SPEC"])
 		bar.empty:SetWidth(max(40, (bar.content:GetWidth() or 200) - 16))
@@ -531,7 +531,7 @@ local function CreateBar()
 	end
 
 	EnsureSettingsTemplate()
-	-- Prefer Blizzard settings chrome; fall back to a plain frame if the template
+	-- Prefer Blizzard settings chrome, falling back to a plain frame if the template
 	-- isn't available (LOD failed / OptionalDeps skipped).
 	local ok, created = pcall(CreateFrame, "Frame", "StatPriorityFirstCharacterBar", CharacterFrame, "SettingsFrameTemplate")
 	if ok and created then
@@ -551,7 +551,7 @@ local function CreateBar()
 	bar:EnableMouse(true)
 	bar:Hide()
 
-	-- Title sits in the NineSlice; pull in the portrait-era side padding.
+	-- Title sits in the NineSlice, so pull in the portrait-era side padding.
 	if bar.NineSlice and bar.NineSlice.Text then
 		bar.NineSlice.Text:ClearAllPoints()
 		bar.NineSlice.Text:SetPoint("TOP", 0, -5)
@@ -560,7 +560,7 @@ local function CreateBar()
 		bar.NineSlice.Text:SetJustifyH("CENTER")
 	end
 
-	-- Display chrome — close would only confuse next to CharacterFrame's X.
+	-- Display chrome. Close would only confuse next to CharacterFrame's X.
 	if bar.ClosePanelButton then
 		bar.ClosePanelButton:Hide()
 		bar.ClosePanelButton:EnableMouse(false)

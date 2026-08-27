@@ -2,7 +2,7 @@
 	StatPriorityFirst - deDE (stub)
 	----
 	Copy this file for other locales (frFR, esES, …). Override only keys you
-	translate — enUS already filled ns.L. Catalog slugs stay English for /spf
+	translate. enUS already filled ns.L. Catalog slugs stay English for /spf
 	and the scraper; class/spec *display* names come from Blizzard APIs.
 --]]
 

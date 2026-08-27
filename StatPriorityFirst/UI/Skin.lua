@@ -3,7 +3,7 @@
 	----
 	Flat Wowhead-inspired chrome: dark panels, thin gray borders.
 	Accent = current class color (Raid/M+ pills on Wowhead are class-tinted,
-	not a fixed purple — DH just happens to be purple).
+	not a fixed purple, DH just happens to be purple).
 --]]
 
 local _, ns = ...
@@ -117,7 +117,7 @@ local function PaintButton(btn, mode)
 	end
 end
 
--- Flat pill / toolbar button — active fill uses class accent.
+-- Flat pill / toolbar button. Active fill uses class accent.
 function ns.Skin.CreateFlatButton(parent, opts)
 	opts = opts or {}
 	local btn = CreateFrame("Button", nil, parent, "BackdropTemplate")

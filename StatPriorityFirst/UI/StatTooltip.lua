@@ -2,7 +2,7 @@
 	StatPriorityFirst - Stat tooltips
 	----
 	Hover a ranked row → summary, notes, DR breakpoints + live rating compare.
-	True/lost rating + a thin bracket meter (no text painted on the fill —
+	True/lost rating + a thin bracket meter (no text painted on the fill,
 	neon-on-white was a crime). Avoid GameTooltip_InsertFrame; taint city.
 	{{spell:ID}} expands via C_Spell at display time.
 --]]
@@ -64,7 +64,7 @@ function ns.UI.HideSpellTooltip()
 end
 
 -- ---
--- Bracket meter — fill is visual only; numbers live in a normal tooltip line.
+-- Bracket meter. Fill is visual only, numbers live in a normal tooltip line.
 -- ---
 
 local BAR_H = 6
@@ -118,7 +118,7 @@ local function LayoutBracketMeter(tooltip, info)
 	local fr, fg, fb, fa = MeterFillColor(info.color)
 	m.Fill:SetColorTexture(fr, fg, fb, fa)
 
-	-- Numbers as a real tooltip line — always readable, never fighting the fill.
+	-- Numbers as a real tooltip line, always readable, never fighting the fill.
 	local penaltyPct = floor((info.bracketPenalty or 0) * 100 + 0.5)
 	local muted = Skin.Color.textMuted
 	tooltip:AddDoubleLine(
@@ -200,8 +200,8 @@ local function AddLiveDRCompare(tooltip, info)
 		)
 	end
 	tooltip:AddLine(L[info.statusKey], br, bg, bb)
-	-- Next-breakpoint lines BEFORE the meter — LayoutBracketMeter pins to the
-	-- last spacer line; adding text afterward leaves the fill stuck mid-tooltip.
+	-- Next-breakpoint lines BEFORE the meter. LayoutBracketMeter pins to the
+	-- last spacer line, adding text afterward leaves the fill stuck mid-tooltip.
 	if info.nextNeed and info.nextLabel then
 		tooltip:AddDoubleLine(
 			L["DR_NEXT"],

@@ -372,7 +372,7 @@ local function LayoutPriorityChain(pool, priority, entry, anchorFrame, yOffset, 
 		contentW = contentW + pieces[i].width
 	end
 
-	-- Center in the inset; fall back to a sensible width before first layout pass.
+	-- Center in the inset, and fall back to a sensible width before first layout pass.
 	local parentW = anchorFrame:GetWidth() or 0
 	if parentW < 32 then
 		parentW = max(PANEL_WIDTH - 28, contentW + 24)
@@ -396,7 +396,7 @@ local function LayoutPriorityChain(pool, priority, entry, anchorFrame, yOffset, 
 end
 
 -- ---
--- Strengths / Weaknesses removed — BiS gear grid lives in UI/GearCards.lua
+-- Strengths / Weaknesses removed. BiS gear grid lives in UI/GearCards.lua
 -- ---
 
 -- ---
@@ -645,7 +645,7 @@ local function EnsureLiveRatingEvents(enable)
 	end
 end
 
--- BiS icons request item data; fill textures when the cache catches up.
+-- BiS icons request item data, then fill textures when the cache catches up.
 local function EnsureItemInfoEvents(enable)
 	if enable then
 		if not itemInfoFrame then
@@ -727,7 +727,7 @@ function ns.UI.Refresh()
 	local className = ns.GetLocalizedClassName(classFile)
 	local catalogSpecName = specInfo and specInfo.name
 	local specName = ns.GetLocalizedSpecName(specID, catalogSpecName)
-	panel.subtitle:SetText(className .. " — " .. specName)
+	panel.subtitle:SetText(className .. " - " .. specName)
 	panel.classBtn:SetText(className)
 	panel.specBtn:SetText(specName)
 
@@ -751,7 +751,7 @@ function ns.UI.Refresh()
 		panel.contextNote:Hide()
 	end
 
-	-- Prefer bis-gear URL when cards exist; else priority guide. Never LaunchURL.
+	-- Prefer bis-gear URL when cards exist, else priority guide. Never LaunchURL.
 	local copyURL = entry and entry.gear and entry.gear.sourceURL
 	if (not copyURL or copyURL == "") and entry then
 		copyURL = entry.sourceURL
@@ -885,7 +885,7 @@ function ns.UI.Refresh()
 		panel:SetHeight(chrome + CHAIN_HEIGHT + 56 + gearH)
 	end
 
-	-- Guide tabs prefer a readable fixed height; Priority keeps content-sized height.
+	-- Guide tabs prefer a readable fixed height, and Priority keeps content-sized height.
 	if state.tab ~= "priority" then
 		panel:SetHeight(max(panel:GetHeight() or 0, 460))
 		panel:SetWidth(max(panel:GetWidth() or 0, PANEL_WIDTH))
@@ -938,7 +938,7 @@ function ns.UI.CreatePanel()
 	end)
 	panel:Hide()
 
-	-- ESC closes us the Blizzard way (needs a global name — we have one).
+	-- ESC closes us the Blizzard way (needs a global name, and we have one).
 	if UISpecialFrames then
 		local already
 		for i = 1, #UISpecialFrames do

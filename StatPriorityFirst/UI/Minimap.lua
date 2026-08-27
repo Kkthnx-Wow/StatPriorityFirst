@@ -3,7 +3,7 @@
 	----
 	No LibDBIcon dependency, but we steal its edge math: radius tracks
 	Minimap:GetWidth()/2 so square ElvUI/Ellesmere maps don't park the button
-	inside the terrain. Flat SPF chrome by default — kill the gold
+	inside the terrain. Flat SPF chrome by default, kill the gold
 	MiniMap-TrackingBorder forever.
 --]]
 
@@ -21,7 +21,7 @@ local BUTTON_SIZE = 24
 local EDGE = 5 -- LibDBIcon default: sit just outside the map rim
 local dragging = false
 
--- Quadrant round/square rules — same table LibDBIcon ships.
+-- Quadrant round/square rules, the same table LibDBIcon ships.
 local MINIMAP_SHAPES = {
 	["ROUND"] = { true, true, true, true },
 	["SQUARE"] = { false, false, false, false },
@@ -130,7 +130,7 @@ local function TrySkinButton()
 	if not button or button._spfSkinned then
 		return
 	end
-	-- Prefer ElvUI button skin; else Ellesmere border; else keep SPF flat backdrop.
+	-- Prefer ElvUI button skin, else Ellesmere border, else keep SPF flat backdrop.
 	if ApplyElvUIButtonSkin() or ApplyEllesmereButtonSkin() then
 		button._spfSkinned = true
 	end

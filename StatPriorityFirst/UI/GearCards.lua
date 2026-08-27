@@ -74,7 +74,7 @@ local function ParseItemRef(ref)
 	return nil, nil
 end
 
--- Pass scraped bonuses straight through; bare items stay bare (base tooltip).
+-- Pass scraped bonuses straight through. Bare items stay bare (base tooltip).
 local function NormalizeGearBonuses(bonuses)
 	if not bonuses or #bonuses == 0 then
 		return nil
@@ -111,7 +111,7 @@ local function ItemIcon(itemID)
 end
 
 -- Bonus-aware quality only. Bare-ID fallback paints Myth epics as uncommon green
--- and — worse — a wrong non-nil quality skips RequestLoad forever.
+-- and, worse, a wrong non-nil quality skips RequestLoad forever.
 local function ItemQuality(itemID, bonuses)
 	if not itemID then
 		return nil
@@ -199,7 +199,7 @@ local function BlockHeight(rows)
 	return rows * ICON + (rows - 1) * ICON_GAP
 end
 
--- Always 50/50 — count-weighted splits shoved Tier Alts into a sliver (4+1).
+-- Always 50/50. Count-weighted splits shoved Tier Alts into a sliver (4+1).
 local function SplitColumnWidths(rowW)
 	local hostPad = 6
 	local inner = rowW - ROW_PAD * 2 - SPLIT_GAP
@@ -274,7 +274,7 @@ local function LayoutIconGrid(pool, parent, refs, startY, forcedW, isGear)
 		return 0
 	end
 
-	-- Prefer the width we just SetSize'd — GetWidth() can lag a frame and under-size the row.
+	-- Prefer the width we just SetSize'd. GetWidth() can lag a frame and under-size the row.
 	local availW = max(1, forcedW or parent:GetWidth() or 200)
 	local cols = FitCols(availW)
 	local rows = RowsForCount(n, cols)
@@ -313,9 +313,9 @@ local function EnsureSection(host, index)
 		return row
 	end
 
-	-- Flat section — no card box; title + icons + optional BiS|Alts split.
+	-- Flat section, no card box. Title + icons + optional BiS|Alts split.
 	row = CreateFrame("Frame", nil, host)
-	-- Don't clip — under-measured hosts were chewing icon edges and looking "small".
+	-- Don't clip. Under-measured hosts were chewing icon edges and looking "small".
 	row:SetClipsChildren(false)
 
 	row.header = row:CreateFontString(nil, "OVERLAY", "GameFontNormal")
@@ -326,7 +326,7 @@ local function EnsureSection(host, index)
 	row.link.text = row.link:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
 	row.link.text:SetAllPoints()
 	row.link.text:SetText("↗")
-	-- Mockup uses class-accent-ish purple; we keep the copy-link red cue for affordance.
+	-- Mockup uses class-accent-ish purple, and we keep the copy-link red cue for affordance.
 	row.link.text:SetTextColor(0.95, 0.35, 0.35)
 	row.link:SetScript("OnClick", function(self)
 		if self.url and ns.UI.ShowCopyURL then
@@ -354,7 +354,7 @@ local function EnsureSection(host, index)
 	row.altLabel:SetJustifyH("CENTER")
 
 	row.emptyHint = row:CreateFontString(nil, "OVERLAY", "GameFontDisable")
-	row.emptyHint:SetText(L["GEAR_EMPTY"] or "—")
+	row.emptyHint:SetText(L["GEAR_EMPTY"] or "-")
 	row.emptyHint:Hide()
 
 	row.rule = row:CreateTexture(nil, "ARTWORK")
@@ -405,7 +405,7 @@ local function PaintSection(row, data, gear, width, height, showRule)
 	local alts = data.alternatives or {}
 	local hasAlts = #alts > 0
 	local hasAny = #bis > 0 or hasAlts
-	-- Weapons / Trinkets / Tier are Myth-track gear; Consumables are not.
+	-- Weapons / Trinkets / Tier are Myth-track gear. Consumables are not.
 	local isGear = data.id ~= "consumables"
 	local contentTop = -HEADER_H
 	local footer = hasAlts and FOOTER_H or 4
@@ -455,7 +455,7 @@ local function PaintSection(row, data, gear, width, height, showRule)
 		row.altHost:SetSize(altHostW, iconAreaH)
 		row.altHost:Show()
 
-		-- Midline every split row — same X as Weapons/Trinkets/Tier so columns line up.
+		-- Midline every split row, the same X as Weapons/Trinkets/Tier so columns line up.
 		local divX = floor(width / 2)
 		local soft = Skin.Color.borderSoft
 		row.divider:SetColorTexture(soft[1], soft[2], soft[3], 0.45)
@@ -470,7 +470,7 @@ local function PaintSection(row, data, gear, width, height, showRule)
 		row.bisLabel:SetWidth(bisW)
 		row.bisLabel:Show()
 
-		-- Narrow split columns can't fit "Alternatives" — use the short tag.
+		-- Narrow split columns can't fit "Alternatives", so use the short tag.
 		row.altLabel:SetText((altW < 120 and L["ALTERNATIVES_SHORT"]) or L["ALTERNATIVES"])
 		row.altLabel:ClearAllPoints()
 		row.altLabel:SetPoint("BOTTOMRIGHT", -ROW_PAD, 2)

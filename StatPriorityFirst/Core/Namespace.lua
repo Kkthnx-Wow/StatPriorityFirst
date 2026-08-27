@@ -2,7 +2,7 @@
 	StatPriorityFirst - Namespace
 	----
 	Private ns table, secret helpers, stat keys, icon paths.
-	Icons are PNGs under assets/ — retail loads them fine from Interface\AddOns.
+	Icons are PNGs under assets/. Retail loads them fine from Interface\AddOns.
 --]]
 
 local addonName, ns = ...
@@ -27,7 +27,7 @@ end
 
 -- ---
 -- Stat keys (match scraper + assets)
--- Labels live in Locales — resolve at call time so overlays can translate.
+-- Labels live in Locales, resolved at call time so overlays can translate.
 -- ---
 
 ns.STAT_KEYS = { "STR", "AGI", "INT", "CRIT", "HASTE", "MASTERY", "VERS" }
@@ -84,7 +84,7 @@ ns.STAT_ICONS = {
 local PRIMARY = { STR = true, AGI = true, INT = true }
 
 -- Separator after index i (between priority[i] and priority[i+1]).
--- Prefer scraped gaps from overview builds (agi>>crit>mastery); else » after primary.
+-- Prefer scraped gaps from overview builds (agi>>crit>mastery), else » after primary.
 function ns.PrioritySeparator(priority, index, gaps)
 	if gaps and gaps[index] then
 		return gaps[index]
@@ -101,10 +101,10 @@ ns.DEFAULTS = {
 	panel = { point = "CENTER", relativePoint = "CENTER", x = 0, y = 0, scale = 1, locked = false },
 	characterBar = { hide = false }, -- SettingsFrameTemplate strip above CharacterFrame
 	drTooltips = { showOnItems = false }, -- append (true N) on item secondary lines
-	followPlayerDefault = true, -- open to Your Spec; false = last browsed
+	followPlayerDefault = true, -- open to Your Spec, false = last browsed
 	lastKey = nil,
-	lastVariant = nil, -- legacy; prefer lastVariantByKey
-	lastVariantByKey = {}, -- [CLASS-specID] = variant id — stops Blood→Unholy pill bleed
+	lastVariant = nil, -- legacy, prefer lastVariantByKey
+	lastVariantByKey = {}, -- [CLASS-specID] = variant id, stops Blood→Unholy pill bleed
 }
 
 -- Per-spec build memory (shared by panel + Character bar).

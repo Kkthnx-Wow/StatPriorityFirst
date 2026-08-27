@@ -2,10 +2,10 @@
 	StatPriorityFirst - Item tooltip true-delta
 	----
 	Optional: on item tooltips, append (true N) after +Crit/Haste/Mastery/Vers
-	lines — marginal true rating of that piece on top of your current totals.
+	lines. Marginal true rating of that piece on top of your current totals.
 	Off by default; Settings → "Show true rating on item tooltips".
 
-	Equipped pieces already count toward GetCombatRating — tagging them would
+	Equipped pieces already count toward GetCombatRating, so tagging them would
 	double-count "what if I had this on top of itself". We skip those.
 --]]
 
@@ -23,7 +23,7 @@ local min = math.min
 
 local IsEquippedItem = C_Item and C_Item.IsEquippedItem
 
--- Locale-facing Blizzard STAT_* names — patterns rebuilt when locale loads.
+-- Locale-facing Blizzard STAT_* names. Patterns rebuilt when locale loads.
 local patterns
 
 local function BuildPatterns()
@@ -68,7 +68,7 @@ local function AppendTrueDelta(tooltip)
 	if not Enabled() or not tooltip or not patterns then
 		return
 	end
-	-- One pass per tooltip paint — locale strings change but the marker doesn't.
+	-- One pass per tooltip paint. Locale strings change but the marker doesn't.
 	if tooltip._spfTrueTagged then
 		return
 	end
